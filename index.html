@@ -1,271 +1,292 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>張甄惠｜履歷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>張甄惠｜履歷</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    <style>
-        * { box-sizing: border-box; }
+<style>
+*{box-sizing:border-box}
 
-        :root{
-            --primary:#003366;
-            --bg:#e9ecef;
-            --text:#333;
-        }
+:root{
+    --primary:#003366;
+    --light:#f4f4f4;
+    --text:#333;
+}
 
-        body{
-            margin:0;
-            padding:20px;
-            font-family:"Times New Roman","標楷體","BiauKai",serif;
-            background:var(--bg);
-            color:var(--text);
-            line-height:1.6;
-            font-size:18px;
-        }
+body{
+    margin:0;
+    padding:20px;
+    font-family:"Times New Roman","標楷體","BiauKai",serif;
+    background:#e9ecef;
+    color:var(--text);
+    font-size:18px;
+    line-height:1.6;
+}
 
-        .resume{
-            max-width:1000px;
-            margin:auto;
-            background:#fff;
-            display:flex;
-            box-shadow:0 0 20px rgba(0,0,0,.12);
-        }
+.resume{
+    max-width:1100px;
+    margin:auto;
+    background:#fff;
+    display:flex;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+}
 
-        /* ===== 左欄 ===== */
-        .sidebar{
-            width:32%;
-            background:var(--primary);
-            color:#fff;
-            padding:40px 25px;
-            text-align:center;
-        }
+/* ===== 左欄 ===== */
+.sidebar{
+    width:32%;
+    background:var(--primary);
+    color:#fff;
+    padding:40px 25px;
+    text-align:center;
+}
 
-        .avatar{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid #fff;
-            margin-bottom:20px;
-        }
+.avatar{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #fff;
+    margin-bottom:20px;
+}
 
-        .sidebar h2{
-            margin-top:30px;
-            border-bottom:1px solid rgba(255,255,255,.4);
-            padding-bottom:8px;
-        }
+.sidebar h2{
+    margin-top:30px;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(255,255,255,.4);
+    font-size:1.3em;
+}
 
-        .sidebar p{
-            margin:10px 0;
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            align-items:center;
-        }
+.sidebar p{
+    margin:10px 0;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    align-items:center;
+}
 
-        ul{
-            text-align:left;
-            padding-left:20px;
-        }
+.sidebar ul{
+    text-align:left;
+    padding-left:20px;
+}
 
-        ul li{
-            margin:8px 0;
-        }
+.sidebar ul li{
+    margin:8px 0;
+}
 
-        .lang{
-            margin-top:20px;
-        }
+.cert-box{
+    margin-top:20px;
+    background:rgba(255,255,255,.15);
+    padding:12px;
+    border-radius:8px;
+}
 
-        .lang a{
-            display:inline-block;
-            padding:8px 20px;
-            border-radius:20px;
-            border:1px solid #fff;
-            color:#fff;
-            text-decoration:none;
-            font-weight:bold;
-        }
+.cert-box a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        /* ===== 右欄 ===== */
-        .content{
-            width:68%;
-            padding:50px 35px;
-        }
+.lang{
+    margin-top:20px;
+}
 
-        .header{
-            border-bottom:2px solid #ddd;
-            padding-bottom:20px;
-            margin-bottom:30px;
-        }
+.lang a{
+    display:inline-block;
+    padding:8px 20px;
+    border-radius:20px;
+    border:1px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        .header h1{
-            margin:0;
-            font-size:3em;
-            color:var(--primary);
-        }
+/* ===== 右欄 ===== */
+.content{
+    width:68%;
+    padding:50px 35px;
+}
 
-        .header h3{
-            margin-top:10px;
-            color:#555;
-        }
+.header{
+    border-bottom:2px solid #ddd;
+    padding-bottom:20px;
+    margin-bottom:30px;
+}
 
-        .section{
-            margin-bottom:35px;
-        }
+.header h1{
+    margin:0;
+    font-size:3em;
+    color:var(--primary);
+}
 
-        .section-title{
-            font-size:1.5em;
-            font-weight:bold;
-            background:#f4f4f4;
-            padding:8px 12px;
-            border-left:6px solid var(--primary);
-            margin-bottom:15px;
-        }
+.header h3{
+    margin-top:10px;
+    color:#555;
+}
 
-        .item{
-            margin-bottom:20px;
-        }
+.section{
+    margin-bottom:35px;
+}
 
-        .item-head{
-            display:flex;
-            justify-content:space-between;
-            flex-wrap:wrap;
-        }
+.section-title{
+    font-size:1.5em;
+    font-weight:bold;
+    background:var(--light);
+    padding:8px 12px;
+    border-left:6px solid var(--primary);
+    margin-bottom:15px;
+}
 
-        .item-title{
-            font-weight:bold;
-            font-size:1.2em;
-        }
+.item{
+    margin-bottom:20px;
+}
 
-        .item-date{
-            font-style:italic;
-            color:#666;
-        }
+.item-head{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
 
-        /* ===== RWD ===== */
-        @media (max-width:768px){
-            body{
-                padding:10px;
-                font-size:15px;
-            }
-            .resume{
-                flex-direction:column;
-            }
-            .sidebar,.content{
-                width:100%;
-            }
-            .avatar{
-                width:120px;
-                height:120px;
-            }
-            .header h1{
-                font-size:2.2em;
-            }
-        }
-    </style>
+.item-title{
+    font-weight:bold;
+    font-size:1.2em;
+}
+
+.item-date{
+    font-style:italic;
+    color:#666;
+}
+
+/* ===== RWD ===== */
+@media (max-width:768px){
+    body{padding:10px;font-size:15px}
+    .resume{flex-direction:column}
+    .sidebar,.content{width:100%}
+    .avatar{width:120px;height:120px}
+    .header h1{font-size:2.2em}
+}
+</style>
 </head>
 
 <body>
 <div class="resume">
 
-    <!-- ===== 左欄 ===== -->
-    <aside class="sidebar">
-        <img src="大頭照.jpg" class="avatar" alt="張甄惠">
+<!-- ===== 左欄 ===== -->
+<aside class="sidebar">
+    <img src="大頭照.jpg" class="avatar" alt="張甄惠">
 
-        <h2>聯絡資訊</h2>
-        <p><i class="fas fa-phone"></i> 0900-796-553</p>
-        <p><i class="fas fa-envelope"></i> hebe.lee085@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> 高雄市林園區</p>
+    <h2>聯絡資訊</h2>
+    <p><i class="fas fa-phone"></i>0900-796-553</p>
+    <p><i class="fas fa-envelope"></i>hebe.lee085@gmail.com</p>
+    <p><i class="fas fa-location-dot"></i>高雄市林園區</p>
 
-        <h2>技能</h2>
-        <ul>
-            <li>行政文書</li>
-            <li>團隊合作</li>
-            <li>溝通協調</li>
-        </ul>
+    <h2>技能</h2>
+    <ul>
+        <li>行政文書</li>
+        <li>團隊合作</li>
+        <li>溝通協調</li>
+        <li>航海儀器操作</li>
+        <li>危機處理與抗壓</li>
+    </ul>
 
-        <div class="lang">
-            <a href="en.html">English</a>
-        </div>
-    </aside>
+    <h2>專業證照</h2>
+    <ul>
+        <li>基本安全訓練</li>
+        <li>保全職責</li>
+        <li>醫療急救</li>
+        <li>助理級航行當值</li>
+        <li>進階滅火</li>
+        <li>駛上／駛下客船訓練</li>
+        <li>油輪與化學液體船貨物操作基本訓練</li>
+        <li>操作級雷達及 ARPA 訓練</li>
+        <li>GMDSS 訓練</li>
+        <li>救生艇及救難艇操縱</li>
+        <li>客船群眾管理訓練</li>
+        <li>電子海圖顯示資訊系統（ECDIS）</li>
+    </ul>
 
-    <!-- ===== 右欄 ===== -->
-    <main class="content">
-        <header class="header">
-            <h1>張甄惠</h1>
-            <h3>國立高雄科技大學｜航運技術系</h3>
-        </header>
+    <div class="cert-box">
+        <a href="https://drive.google.com/drive/folders/1Hv4OKLLzF3vWSDgLX_uwA-aSQSPblld6?usp=sharing" target="_blank">
+            點此查看證照電子檔
+        </a>
+    </div>
 
-        <!-- 個人簡介 -->
-        <section class="section">
-            <div class="section-title">個人簡介</div>
-            <p>
-                具航運技術背景，完成多項航海專業訓練並取得 12 張證照，
-                具備船務實習與行政協調經驗。
-            </p>
-        </section>
+    <div class="lang">
+        <a href="en.html">English</a>
+    </div>
+</aside>
 
-        <!-- ✅ 學歷背景（你剛剛指出缺少的段落） -->
-        <section class="section">
-            <div class="section-title">學歷背景</div>
-            <div class="item">
-                <div class="item-head">
-                    <div class="item-title">國立高雄科技大學</div>
-                    <div class="item-date">112年9月－115年1月</div>
-                </div>
-                <p>航運技術系｜學士</p>
-            </div>
-        </section>
+<!-- ===== 右欄 ===== -->
+<main class="content">
+<header class="header">
+    <h1>張甄惠</h1>
+    <h3>國立高雄科技大學｜航運技術系</h3>
+</header>
 
-        <!-- 工作與實習 -->
-        <section class="section">
-            <div class="section-title">工作與實習經歷</div>
+<section class="section">
+<div class="section-title">個人簡介</div>
+<p>
+具航運技術背景，完成多項航海專業訓練並取得 12 張證照，
+具備船務實習與行政協調經驗。
+</p>
+</section>
 
-            <div class="item">
-                <div class="item-head">
-                    <div class="item-title">長榮海運｜甲板實習生</div>
-                    <div class="item-date">大四</div>
-                </div>
-                <ul>
-                    <li>參與甲板作業與團隊協作</li>
-                    <li>適應高壓封閉工作環境</li>
-                </ul>
-            </div>
+<section class="section">
+<div class="section-title">學歷背景</div>
+<div class="item">
+<div class="item-head">
+    <div class="item-title">國立高雄科技大學</div>
+    <div class="item-date">112年9月－115年1月</div>
+</div>
+<p>航運技術系｜學士</p>
+</div>
+</section>
 
-            <div class="item">
-                <div class="item-title">國立高雄科技大學｜教學助教</div>
-                <ul>
-                    <li>協助教授處理教學事務並輔導學生</li>
-                    <li>於教學輔助過程中精進專業知識</li>
-                </ul>
-            </div>
+<section class="section">
+<div class="section-title">工作與實習經歷</div>
 
-            <div class="item">
-                <div class="item-title">海事人員訓練中心｜行政助理</div>
-                <ul>
-                    <li>協助處理學員事務並熟悉行政文書流程</li>
-                </ul>
-            </div>
-        </section>
+<div class="item">
+<div class="item-head">
+    <div class="item-title">長榮海運｜甲板實習生</div>
+    <div class="item-date">大四</div>
+</div>
+<ul>
+    <li>參與甲板作業與團隊協作</li>
+    <li>適應高壓封閉工作環境</li>
+</ul>
+</div>
 
-        <!-- 專題研究 -->
-        <section class="section">
-            <div class="section-title">專題研究</div>
-            <div class="item">
-                <div class="item-title">船舶使用氨氣燃料之評估（組長）</div>
-                <ul>
-                    <li>評估新型替代燃料之市場可行性</li>
-                    <li>研究是否符合國際碳排放規範</li>
-                    <li>統籌組員意見並完成報告</li>
-                </ul>
-            </div>
-        </section>
+<div class="item">
+<div class="item-title">國立高雄科技大學｜教學助教</div>
+<ul>
+    <li>協助教授處理教學事務並輔導學生</li>
+    <li>於教學輔助過程中精進專業知識</li>
+</ul>
+</div>
 
-    </main>
+<div class="item">
+<div class="item-title">海事人員訓練中心｜行政助理</div>
+<ul>
+    <li>協助處理學員事務並熟悉行政文書流程</li>
+</ul>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title">專題研究</div>
+<div class="item">
+<div class="item-title">船舶使用氨氣燃料之評估（組長）</div>
+<ul>
+    <li>評估新型替代燃料之市場可行性</li>
+    <li>研究是否符合國際碳排放規範</li>
+    <li>統籌組員意見並完成研究報告</li>
+</ul>
+</div>
+</section>
+
+</main>
 </div>
 </body>
 </html>
