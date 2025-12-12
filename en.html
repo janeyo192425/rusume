@@ -1,299 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chen-Hui Chang - Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chen-Hui Chang | Resume</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <style>
         * { box-sizing: border-box; }
 
-        :root{
-            --primary-color:#003366;
-            --secondary-color:#f4f4f4;
-            --text-color:#333;
-            --sidebar-text:#ffffff;
+        :root {
+            --primary: #003366;
+            --light: #f4f4f4;
+            --text: #333;
         }
 
-        body{
-            font-family:"Times New Roman", serif;
-            line-height:1.6;
-            margin:0;
-            padding:20px;
-            background:#e9ecef;
-            color:var(--text-color);
-            font-size:18px;
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: "Times New Roman", serif;
+            background: #e9ecef;
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.6;
         }
 
-        .resume-container{
-            max-width:1000px;
-            margin:0 auto;
-            background:#fff;
-            display:flex;
-            box-shadow:0 0 20px rgba(0,0,0,.1);
+        .resume {
+            max-width: 1100px;
+            margin: auto;
+            background: #fff;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0,0,0,.15);
         }
 
         /* ===== Sidebar ===== */
-        .sidebar{
-            width:32%;
-            background:var(--primary-color);
-            color:#fff;
-            padding:40px 25px;
-            text-align:center;
+        .sidebar {
+            width: 32%;
+            background: var(--primary);
+            color: #fff;
+            padding: 40px 25px;
+            text-align: center;
         }
 
-        .profile-image{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid #fff;
-            margin-bottom:20px;
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
         }
 
-        .sidebar h2{
-            margin-top:30px;
-            border-bottom:1px solid rgba(255,255,255,.3);
-            padding-bottom:8px;
-            font-size:1.3em;
+        .sidebar h2 {
+            margin-top: 30px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,.4);
+            font-size: 1.3em;
         }
 
-        .contact-info p{
-            margin:10px 0;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            gap:10px;
+        .sidebar p {
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
         }
 
-        ul{
-            text-align:left;
-            padding-left:20px;
+        .sidebar ul {
+            text-align: left;
+            padding-left: 20px;
         }
 
-        ul li{
-            margin:8px 0;
+        .sidebar ul li {
+            margin: 8px 0;
         }
 
-        .cert-link{
-            margin-top:25px;
-            padding:12px;
-            background:rgba(255,255,255,.15);
-            border-radius:8px;
+        .cert-box {
+            margin-top: 20px;
+            background: rgba(255,255,255,.15);
+            padding: 12px;
+            border-radius: 8px;
         }
 
-        .cert-link a{
-            color:#fff;
-            text-decoration:none;
-            font-weight:bold;
+        .cert-box a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        /* ===== Language Switch ===== */
-        .lang-switch{
-            margin-top:18px;
+        .lang {
+            margin-top: 20px;
         }
 
-        .lang-btn{
-            display:inline-block;
-            padding:8px 18px;
-            border-radius:24px;
-            border:1px solid rgba(255,255,255,.85);
-            color:#fff;
-            text-decoration:none;
-            font-weight:bold;
+        .lang a {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .lang-btn + .lang-btn{
-            margin-left:10px;
+        /* ===== Content ===== */
+        .content {
+            width: 68%;
+            padding: 50px 35px;
         }
 
-        .lang-btn.active{
-            background:rgba(255,255,255,.2);
+        .header {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        /* ===== Main Content ===== */
-        .main-content{
-            width:68%;
-            padding:50px 35px;
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: var(--primary);
         }
 
-        .header{
-            border-bottom:2px solid #ddd;
-            padding-bottom:20px;
-            margin-bottom:30px;
+        .header h3 {
+            margin-top: 10px;
+            color: #555;
         }
 
-        .header h1{
-            font-size:3em;
-            margin:0;
-            color:var(--primary-color);
-            letter-spacing:4px;
+        .section {
+            margin-bottom: 35px;
         }
 
-        .header h3{
-            margin-top:10px;
-            color:#555;
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: var(--light);
+            padding: 8px 12px;
+            border-left: 6px solid var(--primary);
+            margin-bottom: 15px;
         }
 
-        .section{
-            margin-bottom:30px;
+        .item {
+            margin-bottom: 20px;
         }
 
-        .section-title{
-            font-size:1.5em;
-            font-weight:bold;
-            margin-bottom:15px;
-            padding:8px 12px;
-            border-left:6px solid var(--primary-color);
-            background:var(--secondary-color);
+        .item-head {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        .item{
-            margin-bottom:20px;
+        .item-title {
+            font-weight: bold;
+            font-size: 1.2em;
         }
 
-        .item-header{
-            display:flex;
-            justify-content:space-between;
-            flex-wrap:wrap;
-        }
-
-        .item-title{
-            font-weight:bold;
-            font-size:1.2em;
-        }
-
-        .item-date{
-            font-style:italic;
-            color:#666;
+        .item-date {
+            font-style: italic;
+            color: #666;
         }
 
         /* ===== RWD ===== */
-        @media (max-width:768px){
-            body{
-                padding:10px;
-                font-size:15px;
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 15px;
             }
-            .resume-container{
-                flex-direction:column;
+
+            .resume {
+                flex-direction: column;
             }
-            .sidebar,.main-content{
-                width:100%;
+
+            .sidebar,
+            .content {
+                width: 100%;
             }
-            .profile-image{
-                width:120px;
-                height:120px;
+
+            .avatar {
+                width: 120px;
+                height: 120px;
             }
-            .header h1{
-                font-size:2.2em;
+
+            .header h1 {
+                font-size: 2.2em;
             }
         }
     </style>
 </head>
 
 <body>
-<div class="resume-container">
+<div class="resume">
 
     <!-- ===== Sidebar ===== -->
     <aside class="sidebar">
-        <img src="大頭照.jpg" class="profile-image" alt="Chen-Hui Chang">
+        <img src="大頭照.jpg" class="avatar" alt="Chen-Hui Chang">
 
         <h2>Contact</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-phone"></i> 0900-796-553</p>
-            <p><i class="fas fa-envelope"></i> hebe.lee085@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Kaohsiung, Taiwan</p>
-        </div>
+        <p><i class="fas fa-phone"></i> 0900-796-553</p>
+        <p><i class="fas fa-envelope"></i> hebe.lee085@gmail.com</p>
+        <p><i class="fas fa-location-dot"></i> Linyuan Dist., Kaohsiung City, Taiwan</p>
 
         <h2>Skills</h2>
         <ul>
-            <li>Administrative Support</li>
+            <li>Administrative Documentation</li>
             <li>Teamwork</li>
             <li>Communication & Coordination</li>
-            <li>Leadership</li>
             <li>Navigation Instruments Operation</li>
-            <li>Stress Resistance</li>
+            <li>Crisis Handling & Stress Tolerance</li>
         </ul>
 
-        <h2>Certifications (12)</h2>
+        <h2>Professional Certifications</h2>
         <ul>
-            <li>Basic Safety Training</li>
-            <li>Security Awareness</li>
-            <li>Medical First Aid</li>
-            <li>Officer of the Watch (OOW)</li>
-            <li>Advanced Firefighting</li>
-            <li>Passenger Ship Training</li>
-            <li>Oil & Chemical Tanker Training</li>
-            <li>Radar & ARPA Operation</li>
-            <li>GMDSS</li>
-            <li>Lifeboat & Rescue Boat Operation</li>
-            <li>Crowd Management</li>
-            <li>ECDIS</li>
+            <li>Basic Safety Training (STCW)</li>
+            <li>Security Awareness Training (STCW)</li>
+            <li>Medical First Aid on Board Ship (STCW)</li>
+            <li>Officer in Charge of a Navigational Watch (OICNW)</li>
+            <li>Advanced Fire Fighting (STCW)</li>
+            <li>Ro-Ro Passenger Ship Safety Training</li>
+            <li>Basic Training for Oil and Chemical Tanker Cargo Operations</li>
+            <li>Operational Use of Radar and ARPA</li>
+            <li>Global Maritime Distress and Safety System (GMDSS)</li>
+            <li>Survival Craft and Rescue Boats (SC&amp;RB)</li>
+            <li>Crowd Management Training on Passenger Ships</li>
+            <li>Electronic Chart Display and Information System (ECDIS)</li>
         </ul>
 
-        <div class="cert-link">
+        <div class="cert-box">
             <a href="https://drive.google.com/drive/folders/1Hv4OKLLzF3vWSDgLX_uwA-aSQSPblld6?usp=sharing" target="_blank">
-                View Certificates
+                View Certificates (Digital Copies)
             </a>
         </div>
 
-        <div class="lang-switch">
-            <a class="lang-btn" href="index.html">中文</a>
-            <a class="lang-btn active" href="en.html">English</a>
+        <div class="lang">
+            <a href="index.html">中文</a>
         </div>
     </aside>
 
-    <!-- ===== Main ===== -->
-    <main class="main-content">
+    <!-- ===== Content ===== -->
+    <main class="content">
         <header class="header">
             <h1>Chen-Hui Chang</h1>
-            <h3>Dept. of Shipping Technology, NKUST</h3>
+            <h3>National Kaohsiung University of Science and Technology | Dept. of Shipping Technology</h3>
         </header>
 
         <section class="section">
             <div class="section-title">Profile</div>
             <p>
-                Graduate of the Department of Shipping Technology at National Kaohsiung University of Science and Technology.
-                Completed extensive maritime professional training and obtained multiple certifications.
-                Experienced deck cadet at Evergreen Marine Corporation, familiar with teamwork in high-pressure environments.
-                Also served as a teaching assistant and project leader, developing strong communication,
-                coordination, and administrative skills.
+                Student in the Department of Shipping Technology at National Kaohsiung University of Science and Technology,
+                with comprehensive maritime training and multiple STCW international certifications.
+                Served as a Deck Cadet at Evergreen Marine Corporation, familiar with onboard standard operating procedures
+                and capable of working in high-pressure and enclosed maritime environments.
+                Detail-oriented, responsible, and experienced in both practical operations and administrative documentation,
+                with strong teamwork and communication skills.
             </p>
         </section>
 
         <section class="section">
-            <div class="section-title">Experience</div>
+            <div class="section-title">Education</div>
+            <div class="item">
+                <div class="item-head">
+                    <div class="item-title">National Kaohsiung University of Science and Technology</div>
+                    <div class="item-date">Sep 2023 – Jan 2026</div>
+                </div>
+                <p>Bachelor’s Degree, Department of Shipping Technology</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Work & Internship Experience</div>
 
             <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Evergreen Marine Corp. – Deck Cadet</div>
+                <div class="item-head">
+                    <div class="item-title">Evergreen Marine Corporation | Deck Cadet</div>
                     <div class="item-date">Senior Year</div>
                 </div>
                 <ul>
-                    <li>Participated in deck operations and teamwork coordination.</li>
-                    <li>Adapted to closed and high-pressure working environments.</li>
+                    <li>Participated in deck operations and navigational watch duties</li>
+                    <li>Worked collaboratively with crew members in high-pressure shipboard environments</li>
+                    <li>Developed strong awareness of safety procedures and teamwork</li>
                 </ul>
             </div>
 
             <div class="item">
-                <div class="item-header">
-                    <div class="item-title">NKUST – Teaching Assistant</div>
-                </div>
+                <div class="item-title">National Kaohsiung University of Science and Technology | Teaching Assistant</div>
                 <ul>
-                    <li>Assisted professors with teaching and student guidance.</li>
-                    <li>Enhanced professional knowledge through academic support.</li>
+                    <li>Assisted professors with teaching-related tasks and student guidance</li>
+                    <li>Enhanced professional knowledge through academic support</li>
                 </ul>
             </div>
 
             <div class="item">
-                <div class="item-header">
-                    <div class="item-title">Maritime Training Center – Administrative Assistant</div>
-                </div>
+                <div class="item-title">Maritime Personnel Training Center | Administrative Assistant</div>
                 <ul>
-                    <li>Handled trainee affairs and developed administrative documentation skills.</li>
+                    <li>Managed trainee registration data and certification application processes</li>
+                    <li>Handled administrative documentation to improve processing efficiency and accuracy</li>
                 </ul>
             </div>
         </section>
@@ -301,12 +300,11 @@
         <section class="section">
             <div class="section-title">Project</div>
             <div class="item">
-                <div class="item-title">Evaluation of Ammonia as Marine Fuel</div>
-                <p><strong>Role:</strong> Team Leader</p>
+                <div class="item-title">Evaluation of Ammonia as Marine Fuel (Team Leader)</div>
                 <ul>
-                    <li>Analyzed alternative marine fuels and market feasibility.</li>
-                    <li>Evaluated compliance with international carbon emission regulations.</li>
-                    <li>Led team coordination and task allocation.</li>
+                    <li>Evaluated market feasibility of ammonia as an emerging marine fuel</li>
+                    <li>Analyzed compliance of alternative fuel performance with future international carbon regulations</li>
+                    <li>Coordinated project progress, assigned tasks, and delivered final report on schedule</li>
                 </ul>
             </div>
         </section>
