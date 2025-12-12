@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chen-Hui Chang - Resume</title>
+    <style>
+        /* Ensure padding doesn't break layout */
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1f3a5f; /* Navy Blue */
+            --secondary-color: #f4f4f4; /* Light Grey */
+            --text-color: #333;
+            --sidebar-text: #ffffff;
+        }
+        body {
+            /* Font settings: Times New Roman for English */
+            font-family: "Times New Roman", serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            color: var(--text-color);
+            /* Large font size as requested */
+            font-size: 18px; 
+        }
+        .resume-container {
+            /* Wide layout */
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* --- Sidebar --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--sidebar-text);
+            width: 32%; 
+            padding: 40px 25px;
+            text-align: center;
+            flex-shrink: 0; 
+        }
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.8);
+            object-fit: cover;
+            margin-bottom: 25px;
+            background-color: #ddd;
+        }
+        .sidebar h2 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
+            font-weight: bold;
+        }
+        .contact-info, .skills-list, .cert-list {
+            text-align: left;
+            font-size: 1.05em;
+        }
+        .contact-info p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            word-break: break-word; /* Adjusted for long email/address */
+        }
+        .contact-info i {
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+        .sidebar ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .cert-link {
+            background-color: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .cert-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            font-size: 1.1em;
+        }
+        .cert-link a:hover {
+            text-decoration: underline;
+            color: #ffd700;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            width: 68%; 
+            padding: 50px 35px;
+            flex-grow: 1;
+        }
+        .header {
+            margin-bottom: 35px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 3.2em;
+            color: var(--primary-color);
+            margin: 0;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .header h3 {
+            font-size: 1.6em;
+            color: #555;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 1.6em;
+            color: var(--primary-color);
+            border-left: 6px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+            text-transform: uppercase;
+        }
+        
+        /* Justify text */
+        .main-content p, .main-content li {
+            font-size: 1.2em; 
+            text-align: justify; 
+            margin-bottom: 10px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .item-title {
+            font-size: 1.35em;
+            font-weight: bold;
+            color: #000;
+        }
+        .item-subtitle {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .item-date {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1em;
+        }
+        .main-content ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        /* Print Media Query */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #fff;
+            }
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+            }
+            .sidebar, .main-content {
+                height: 100%;
+            }
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="resume-container">
+    <aside class="sidebar">
+        <img src="大頭照.jpg" alt="Chen-Hui Chang" class="profile-image">
+        
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> 0900-796-553</p>
+            <p><i class="fas fa-envelope"></i> hebe.lee085@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> No. 75, Gongye 2nd Rd., Linyuan Dist., Kaohsiung City</p>
+        </div>
+
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>Administrative Support</li>
+            <li>Teamwork & Communication</li>
+            <li>Resource Allocation</li>
+            <li>Project Leadership</li>
+            <li>Stress Management</li>
+        </ul>
+
+        <h2>Certificates</h2>
+        <ul class="cert-list">
+            <li>Basic Safety Training</li>
+            <li>Security Awareness Duties</li>
+            <li>Medical First Aid</li>
+            <li>Ratings Forming Part of a Navigational Watch</li>
+            <li>Advanced Fire Fighting</li>
+            <li>Ro-Ro Passenger Ships</li>
+            <li>Oil/Chemical Tanker Cargo Operations</li>
+            <li>Radar Navigation & ARPA</li>
+            <li>GMDSS General Operator</li>
+            <li>Survival Craft & Rescue Boats</li>
+            <li>Crowd Management (Passenger Ships)</li>
+            <li>ECDIS Training</li>
+        </ul>
+        
+        <div class="cert-link">
+            <i class="fas fa-cloud-download-alt"></i>
+            <a href="https://drive.google.com/drive/folders/1Hv4OKLLzF3vWSDgLX_uwA-aSQSPblld6?usp=sharing" target="_blank">View Certificates</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Chen-Hui Chang</h1>
+            <h3>National Kaohsiung University of Science and Technology / Dept. of Shipping Technology</h3>
+        </header>
+
+        <section class="section">
+            <div class="section-title">Profile</div>
+            <p>
+                A senior student in the Department of Shipping Technology at National Kaohsiung University of Science and Technology. During my studies, I actively pursued professional development, completing various maritime training courses and obtaining 12 STCW certificates. I have internship experience as a Deck Cadet at Evergreen Marine Corp., where I adapted to high-pressure working environments and teamwork. Additionally, my experience as a Teaching Assistant and Administrative Assistant has honed my communication, leadership, and administrative capabilities.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Education</div>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">National Kaohsiung University of Science and Technology</span>
+                    <span class="item-date">Sep 2023 - Jan 2026</span>
+                </div>
+                <div class="item-subtitle">Department of Shipping Technology (Bachelor's Degree)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Work & Internship Experience</div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Evergreen Marine Corp.</span>
+                    <span class="item-date">Senior Year (2 months)</span>
+                </div>
+                <div class="item-subtitle">Deck Cadet</div>
+                <ul>
+                    <li>Participated in deck operations and navigational watchkeeping; familiarized with shipboard Standard Operating Procedures (SOPs).</li>
+                    <li>Collaborated closely with the crew in a closed and high-pressure environment, significantly enhancing stress tolerance and crisis management skills.</li>
+                    <li>Learned effective manpower allocation and coordination to ensure the safety and success of navigation tasks.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">National Kaohsiung University of Science and Technology</span>
+                    <span class="item-date">During Academic Term</span>
+                </div>
+                <div class="item-subtitle">Teaching Assistant (TA)</div>
+                <ul>
+                    <li>Assisted professors with course materials and classroom equipment to ensure smooth teaching flows.</li>
+                    <li>Tutored students with academic inquiries, serving as a communication bridge between faculty and students.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">Maritime Training Center</span>
+                </div>
+                <div class="item-subtitle">Administrative Assistant</div>
+                <ul>
+                    <li>Assisted with student registration data entry and certificate application processes.</li>
+                    <li>Managed administrative documentation, demonstrating proficiency in office software and improving operational efficiency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Project Achievement</div>
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">Topic: Assessment of Ammonia Fuel for Ships</span>
+                </div>
+                <div class="item-subtitle">Role: Team Leader</div>
+                <ul>
+                    <li>Evaluated the types of new marine fuels and explored the market feasibility of ammonia fuel.</li>
+                    <li>Analyzed whether alternative fuels meet future international carbon emission regulations.</li>
+                    <li>Led the team in data collection, coordinated diverse opinions, assigned tasks effectively, and successfully completed the project report on time.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
