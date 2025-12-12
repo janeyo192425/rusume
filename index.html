@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張甄惠 - 履歷</title>
+    <style>
+        /* 確保寬度包含內距，防止跑版 */
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #003366; /* 深藍色 */
+            --secondary-color: #f4f4f4; /* 淺灰底色 */
+            --text-color: #333;
+            --sidebar-text: #ffffff;
+        }
+        body {
+            /* 字體設定：英文 Times New Roman，中文標楷體 */
+            font-family: "Times New Roman", "BiauKai", "標楷體", serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #e9ecef;
+            color: var(--text-color);
+            /* 維持大字體 */
+            font-size: 18px; 
+        }
+        .resume-container {
+            /* 加寬整體容器寬度 */
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* --- 左側欄位 --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--sidebar-text);
+            /* 調整寬度比例 */
+            width: 32%; 
+            padding: 40px 25px;
+            text-align: center;
+            flex-shrink: 0; 
+        }
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.8);
+            object-fit: cover;
+            margin-bottom: 25px;
+            background-color: #ddd;
+        }
+        .sidebar h2 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
+            font-weight: bold;
+        }
+        .contact-info, .skills-list, .cert-list {
+            text-align: left;
+            font-size: 1.05em;
+        }
+        .contact-info p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            word-break: break-all;
+        }
+        .contact-info i {
+            margin-right: 12px;
+            width: 24px;
+            text-align: center;
+        }
+        .sidebar ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .cert-link {
+            background-color: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .cert-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            font-size: 1.1em;
+        }
+        .cert-link a:hover {
+            text-decoration: underline;
+            color: #ffd700;
+        }
+
+        /* --- 右側欄位 --- */
+        .main-content {
+            /* 調整寬度比例 */
+            width: 68%; 
+            /* 縮減左右內距，讓文字有更多空間 */
+            padding: 50px 35px;
+            flex-grow: 1;
+        }
+        .header {
+            margin-bottom: 35px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 3.2em;
+            color: var(--primary-color);
+            margin: 0;
+            letter-spacing: 8px;
+            font-weight: bold;
+        }
+        .header h3 {
+            font-size: 1.6em;
+            color: #555;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 1.6em;
+            color: var(--primary-color);
+            border-left: 6px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+        
+        /* 內文左右對齊設定 */
+        .main-content p, .main-content li {
+            font-size: 1.2em; 
+            text-align: justify; 
+            text-justify: inter-ideograph;
+            margin-bottom: 10px;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .item-title {
+            font-size: 1.35em;
+            font-weight: bold;
+            color: #000;
+        }
+        .item-subtitle {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .item-date {
+            font-style: italic;
+            color: #666;
+            font-size: 1.1em;
+        }
+        .main-content ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        /* 列印響應式 */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #fff;
+            }
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+            }
+            .sidebar, .main-content {
+                height: 100%;
+            }
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="resume-container">
+    <aside class="sidebar">
+        <img src="大頭照.jpg" alt="張甄惠" class="profile-image">
+        
+        <h2>聯繫方式</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-phone"></i> 0900-796-553</p>
+            <p><i class="fas fa-envelope"></i> hebe.lee085@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> 高雄市林園區工業二路 75 號</p>
+        </div>
+
+        <h2>專業技能</h2>
+        <ul class="skills-list">
+            <li>行政文書技巧</li>
+            <li>團隊合作與溝通</li>
+            <li>人力分配與協調</li>
+            <li>專案領導</li>
+        </ul>
+
+        <h2>專業證照</h2>
+        <ul class="cert-list">
+            <li>基本安全訓練</li>
+            <li>保全職責</li>
+            <li>醫療急救</li>
+            <li>助理級航行當值</li>
+            <li>進階滅火</li>
+            <li>駛上/駛下客船訓練</li>
+            <li>油輪與化學液體船貨物操作</li>
+            <li>操作級雷達及ARPA訓練</li>
+            <li>GMDSS訓練</li>
+            <li>救生艇筏及救難艇操縱</li>
+            <li>客船群眾管理訓練</li>
+            <li>電子海圖顯示資訊系統 (ECDIS)</li>
+        </ul>
+        
+        <div class="cert-link">
+            <i class="fas fa-cloud-download-alt"></i>
+            <a href="https://drive.google.com/drive/folders/1Hv4OKLLzF3vWSDgLX_uwA-aSQSPblld6?usp=sharing" target="_blank">點此查看證照電子檔</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>張甄惠</h1>
+            <h3>國立高雄科技大學 / 航運技術系</h3>
+        </header>
+
+        <section class="section">
+            <div class="section-title">個人簡介</div>
+            <p>
+                擁有國立高雄科技大學航運技術系的學士學位。在學期間積極精進專業，利用課餘時間完成了多項航海人員專業訓練，並成功取得 12 張合格證照。具備長榮海運甲板實習經驗，熟悉團隊合作與高壓環境下的工作模式。同時在校擔任助教與專題組長的經歷，培養了良好的溝通協調、領導及行政文書能力。
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-title">學歷背景</div>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">國立高雄科技大學</span>
+                    <span class="item-date">112年9月 - 115年1月</span>
+                </div>
+                <div class="item-subtitle">航運技術系 學士</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">工作與實習經歷</div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">長榮海運</span>
+                    <span class="item-date">大四下學期</span>
+                </div>
+                <div class="item-subtitle">甲板實習生</div>
+                <ul>
+                    <li>實際參與甲板作業，學習團隊合作及人力分配的重要性。</li>
+                    <li>在封閉且高壓的環境中與團隊緊密合作，使抗壓性逐漸提升。</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">國立高雄科技大學</span>
+                    <span class="item-date">在校期間</span>
+                </div>
+                <div class="item-subtitle">教授助教</div>
+                <ul>
+                    <li>協助教授處理教學事務，同時輔導學生解決問題。</li>
+                    <li>透過教學輔助過程，更精進自身的專業知識。</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">海事人員訓練中心</span>
+                </div>
+                <div class="item-subtitle">行政助理</div>
+                <ul>
+                    <li>任職期間協助處理學員事務，學習並掌握了許多行政文書的技巧。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">專題研究</div>
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title">題目：船舶使用氨氣燃料之評估</span>
+                </div>
+                <div class="item-subtitle">擔任角色：組長</div>
+                <ul>
+                    <li>評估關於船舶新型燃料的種類，並探討其對於市場的可行性。</li>
+                    <li>研究替代燃料的效能在未來是否能達到國際法規碳排放的標準。</li>
+                    <li>學習聆聽並磨合每個組員的意見，妥善分配工作，帶領團隊完成報告。</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
